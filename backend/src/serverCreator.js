@@ -1,5 +1,6 @@
 'use strict';
 import {ChatBotHelp} from "./chatbot-help"
+import { SocialMedia } from './social_media';
 const Express = require('express');
 
 export class Server {
@@ -17,6 +18,7 @@ export class Server {
         // })
 
         new ChatBotHelp(this._server);
+        new SocialMedia(this._server);
         this._server.get(/.*/, Express.static('app'));
 
     }
