@@ -23,6 +23,7 @@
     "homepage": "",
     "dependencies": {
         "@akanass/rx-http-request": "^3.0.0",
+        "@icon/open-iconic": "^1.1.1-2",
         "bootstrap": "^4.1.3",
         "bootstrap-sass": "^3.3.7",
         "jquery": "^3.3.1",

@@ -1,4 +1,36 @@
 @charset "utf-8";
-@import "./chat.scss";
-@import "./live_chat.scss";
-@import "./index.scss";
+
+.header {
+    border-radius: 5px;
+
+    .btn {
+        margin: 5px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid;
+        font-size: 25px;
+    }
+}
+
+.portofolio {
+    .p-content {
+    }
+}
+
+.content {
+    background: ghostwhite;
+    border-radius: 5px;
+
+    .card-header {
+        text-align: center
+    }
+
+    .card-body {
+        text-align: center
+    }
+}
+
+.body {
+    background: darkseagreen;
+    padding: 10px;
+}
