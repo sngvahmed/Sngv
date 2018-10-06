@@ -1,0 +1,74 @@
+#sngv-content {
+    font-family: serif;
+
+    .center {
+        text-align: center;
+    }
+
+    .phone, .email, .graduated{
+        opacity: 0.5;
+    }
+
+    .work {
+        opacity: 0.8;
+    }
+
+    .role {
+        color: white;
+        background: black;
+        float: left;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .project-header {
+        text-align: center;
+        border-radius: 5px 0px 0px 5px;
+        
+    }
+
+    .project-content {
+        border: 1px solid;
+        border-radius: 5px;
+        padding:5px
+    }
+
+    .project-responsibility {
+        color: white;
+        background: black;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .project-details {
+        text-align: center;
+        opacity: 0.8;
+    }
+
+    .center-h {
+        width: 140px;
+        padding: 5px;
+        border: solid 1px;
+        border-radius: 5px;
+    }
+
+    .project {
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .projects {
+        height: 700px;
+        overflow: scroll;
+        padding: 20px;
+    }
+
+    .home{
+        background: white;
+        height: 100%;
+        border-radius: 5px;
+    }
+}

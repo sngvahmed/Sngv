@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 .header {
     border-radius: 5px;
 
@@ -23,7 +22,6 @@
 
 
 .content {
-    background: ghostwhite;
     border-radius: 5px;
 
     .card-header {
@@ -39,3 +37,5 @@
     background: darkseagreen;
     padding: 10px;
 }
+
+@import "./home.scss";

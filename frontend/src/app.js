@@ -1,32 +1,47 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@icon/open-iconic/open-iconic.css'
-import "./css/main.scss"
-
-import "./img/profile.jpg"
-
-import "./img/social/f.png"
-import "./img/social/l.png"
-import "./img/social/w.png"
-import "./img/social/t.png"
-import "./img/social/g.png"
-
-import "./img/home.png"
-import "./img/resume.png"
-import "./img/project.png"
-import "./img/contact.png"
+import "./index"
 
 import $ from "jquery";
+import * as rxjs from 'rxjs';
+const fromEvent = rxjs.fromEvent;
 
-import { MineChat } from "./chat-my";
-import { ChatGuest } from "./chat-guest";
+import { SocialMedia } from './social.media.service';
+import { Home } from './component/home';
+import { Skills } from './component/skills';
+import { Contact } from './component/contact';
+import { Project } from './component/project';
 
+class App {
+    constructor() {
+        this.socialMedia = new SocialMedia();
+        this.home = new Home();
+        this.skills = new Skills();
+        this.contact = new Contact();
+        this.project = new Project();
+    }
 
-const chatGuest = new ChatGuest();
-const myChat = new MineChat();
-var chatHistory = $(".chat-history");
+    init() {
+        this.socialMedia.fetchSocialMediaLogoUrl();
+        this.handlePageChainging();
+        $('#sngv-content').html(this.home.html);
+    }
 
-myChat.getHelpMsg((msgs) => {
-    chatHistory.append(myChat.buildHelpChat(msgs));
-});
+    handlePageChainging() {
+        fromEvent($('.oi-home'), 'click').subscribe(() => {
+            $('#sngv-content').html(this.home.html);
+        })
 
+        fromEvent($('.oi-project'), 'click').subscribe(() => {
+            $('#sngv-content').html(this.project.html);
+        })
 
+        fromEvent($('.oi-code'), 'click').subscribe(() => {
+            $('#sngv-content').html(this.skills.html);
+        })
+
+        fromEvent($('.oi-double-quote-serif-right'), 'click').subscribe(() => {
+            $('#sngv-content').html(this.contact.html);
+        })
+    }
+}
+
+new App().init();

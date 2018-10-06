@@ -1,6 +1,7 @@
 'use strict';
-import {ChatBotHelp} from "./chatbot-help"
-import { SocialMedia } from './social_media';
+import {SocialMediaController} from './controller/social.media.controller'
+import { HomeController } from './controller/home.controller';
+import { ProjectController } from './controller/project.controller';
 const Express = require('express');
 
 export class Server {
@@ -12,13 +13,10 @@ export class Server {
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             next();
         });
-
-        // this._server.get("/msg/help", (req, res) => {
-        //     res.json({msg: this.chatbotHelp._msg})
-        // })
-
-        new ChatBotHelp(this._server);
-        new SocialMedia(this._server);
+        
+        new ProjectController(this.server)
+        new SocialMediaController(this._server);
+        new HomeController(this._server);
         this._server.get(/.*/, Express.static('app'));
 
     }
